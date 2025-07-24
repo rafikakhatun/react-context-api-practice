@@ -13,10 +13,10 @@ const Header = () => {
 
                 {/* Navigation */}
                 <nav className="space-x-6 text-gray-600 font-medium">
-                    <Link to="/home" className="hover:text-blue-600">Home</Link>
+                    <Link to="/" className="hover:text-blue-600">Home</Link>
                     <Link to="/about" className="hover:text-blue-600">About</Link>
                     <Link to="/contact" className="hover:text-blue-600">Contact</Link>
-                    <Link to="/dashboard" className="hover:text-blue-600">Dashboard</Link>
+                    <Link to="/drashboard" className="hover:text-blue-600">Dashboard</Link>
                 </nav>
             </div>
         </header>

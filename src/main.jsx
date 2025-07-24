@@ -7,6 +7,7 @@ import Layout from './layout/layout.jsx'
 import About from './pages/About.jsx'
 import Home from './pages/home.jsx'
 import Contact from './pages/Contact.jsx'
+import Drashboard from './pages/Drashboard.jsx'
 
 
 const router = createBrowserRouter([
@@ -16,8 +17,8 @@ const router = createBrowserRouter([
     element: <Layout></Layout>,
     children: [
       {
-        path : "/home",
-        element : <Home></Home>
+        path: "/home",
+        element: <Home></Home>
 
       },
 
@@ -28,8 +29,13 @@ const router = createBrowserRouter([
       },
 
       {
-path: "/contact",
-element : <Contact></Contact>
+        path: "/contact",
+        element: <Contact></Contact>
+      },
+
+      {
+        path : "/drashboard",
+        element :<Drashboard></Drashboard>
       }
     ]
 
