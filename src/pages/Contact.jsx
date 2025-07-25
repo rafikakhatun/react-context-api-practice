@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Contact = () => {
+
+
+    // context api data uses
+     const {data} = useContext(AuthContext)
+     console.log(data)
+
+
+
+
+
+
     return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+        <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
+             {/* context api data show */}
+                <h1 className='text-2xl font-bold text-blue-600 text-center mb-6'>{data}</h1>
+           
             <div className="bg-white shadow-xl rounded-xl p-8 w-full max-w-xl">
                 <h2 className="text-3xl font-bold text-center mb-6 text-blue-600">Contact Us</h2>
                 

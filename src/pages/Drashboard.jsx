@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Drashboard = () => {
+
+    // context api data uses 
+     
+    const {data} = useContext(AuthContext);
+
+    console.log(data)
+
+
+
+
+
     return (
         <div className="min-h-screen bg-gray-100 p-6">
             <div className="max-w-7xl mx-auto">
@@ -25,6 +37,12 @@ const Drashboard = () => {
                         <p className="text-3xl font-bold text-red-500">$8,450</p>
                     </div>
                 </div>
+                {/* context api data show*/}
+
+                <h1 className="text-xl font-semibold text-blue-600 text-center mt-14">{data}</h1>
+
+
+
             </div>
         </div>
     );

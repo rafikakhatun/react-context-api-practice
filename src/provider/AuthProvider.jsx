@@ -7,7 +7,7 @@ export const AuthContext = createContext(null);
 
 const userInfo = {
 
-    data: "This is my Website",
+    data: "Context API empowers our React app by enabling smooth and efficient state sharing across components without prop drilling.",
 
 }
 
