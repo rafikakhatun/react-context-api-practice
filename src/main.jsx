@@ -8,6 +8,7 @@ import About from './pages/About.jsx'
 import Home from './pages/home.jsx'
 import Contact from './pages/Contact.jsx'
 import Drashboard from './pages/Drashboard.jsx'
+import AuthProvider from './provider/AuthProvider.jsx'
 
 
 const router = createBrowserRouter([
@@ -66,6 +67,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+   <AuthProvider> <RouterProvider router={router}></RouterProvider>
+   </AuthProvider>
     <RouterProvider router={router}></RouterProvider>
   </StrictMode>,
 )
