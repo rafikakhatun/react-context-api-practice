@@ -1,11 +1,19 @@
-import React, { Children, createContext } from 'react';
+import React, { createContext } from 'react';
 
 
 // contect api uses
 
 export const AuthContext = createContext(null);
 
-const userInfo = {
+
+
+
+
+
+
+const AuthProvider = ({children}) => {
+
+    const userInfo = {
 
     data: "Context API empowers our React app by enabling smooth and efficient state sharing across components without prop drilling.",
 
@@ -15,7 +23,8 @@ const userInfo = {
 
 
 
-const AuthProvider = ({children}) => {
+
+
     return (
         <>
 
