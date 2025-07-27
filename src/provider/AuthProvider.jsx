@@ -1,5 +1,6 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {  createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { createContext } from 'react';
+import auth from '../firebase/FirebaseInit';
 
 
 // contect api uses
@@ -34,6 +35,7 @@ const AuthProvider = ({ children }) => {
         register,
 
     }
+
 
 
     
