@@ -9,6 +9,7 @@ import Home from './pages/home.jsx'
 import Contact from './pages/Contact.jsx'
 import Drashboard from './pages/Drashboard.jsx'
 import AuthProvider from './provider/AuthProvider.jsx'
+import Register from './pages/Register.jsx'
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
       {
         path: "/drashboard",
         element: <Drashboard></Drashboard>
+      },
+
+      {
+        path: "register",
+        element:<Register></Register>
       }
     ]
 
