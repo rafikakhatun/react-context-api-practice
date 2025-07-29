@@ -10,6 +10,7 @@ import Contact from './pages/Contact.jsx'
 import Drashboard from './pages/Drashboard.jsx'
 import AuthProvider from './provider/AuthProvider.jsx'
 import Register from './pages/Register.jsx'
+import Login from './pages/Login.jsx'
 
 
 const router = createBrowserRouter([
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
       {
         path: "register",
         element:<Register></Register>
+      },
+
+      {
+        path:"login",
+        element:<Login></Login>
       }
     ]
 

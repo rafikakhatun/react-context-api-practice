@@ -26,7 +26,7 @@ const Header = () => {
                     </Link>
 
                     {/*Login/ signUp*/}
-                    <Link>
+                    <Link to="/login">
                         <button className='px-4 py-2 cursor-pointer bg-green-600 text-white rounded-xl'>Login</button>
                     </Link>
                 </div>
