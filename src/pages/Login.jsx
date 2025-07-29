@@ -1,5 +1,6 @@
 import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -20,6 +21,24 @@ const Login = () => {
                         <input className='w-full px-4 py-3 rounded-md outline-none border border-gray-300 bg-gray-200' type="password" name="password" />
                     </div>
 
+
+                    {/*Show password and terms and condition */}
+                    <div className='flex justify-between'>
+                        <div className='flex gap-1'>
+                            <input type="checkbox" id="showPassword" />
+                            <label className='text-sm' htmlFor="showPassword">Show password</label>
+                        </div>
+
+                        <div className='flex gap-1'>
+                            <input type="checkbox" id="termsCondition" />
+                            <label className='text-sm' htmlFor="termsCondition"><Link>Forgot password</Link></label>
+                        </div>
+
+
+                    </div>
+
+
+                    {/* button field */}
                     <button className='w-full px-4 py-3 rounded-md bg-blue-600 text-white hover:bg-blue-700 cursor-pointer'>Login</button>
 
                     {/* Continue with google */}
@@ -36,6 +55,12 @@ const Login = () => {
                             <span>Continue With Google</span>
                         </div>
                     </button>
+
+                    {/* don't have an account */}
+                    <div className='flex gap-2 justify-center items-center'>
+                        <span className='text-gray-700'>Don't have an account!</span>
+                        <Link to="/register" className='text-blue-600'>Register Now</Link>
+                    </div>
 
 
 
