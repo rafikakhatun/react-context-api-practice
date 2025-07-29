@@ -14,6 +14,7 @@ import Drashboard from './pages/Drashboard.jsx'
 import AuthProvider from './provider/AuthProvider.jsx'
 import Register from './pages/Register.jsx'
 import Login from './pages/Login.jsx'
+import TermsConditions from './pages/TermsCondtions.jsx';
 
 
 const router = createBrowserRouter([
@@ -45,13 +46,20 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "register",
+        path: "/register",
         element:<Register></Register>
       },
 
       {
-        path:"login",
+        path:"/login",
         element:<Login></Login>
+      },
+
+      {
+        path:"/termsCondition",
+        element:<TermsConditions></TermsConditions>
+
+
       }
     ]
 

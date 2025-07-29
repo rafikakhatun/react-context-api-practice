@@ -30,12 +30,12 @@ const Login = () => {
                     </div>
 
                     {/* continue with Google*/}
-                    <div className='flex justify-center items-center'>
-                        <button className='flex gap-1 text-md text-gray-700 border border-gray-300 shadow rounded-md px-6 py-2 cursor-pointer'>
+                    <button className='w-full cursor-pointer'>
+                        <div className="flex items-center justify-center gap-2 px-6 py-2 border border-gray-300 shadow rounded-md text-md text-gray-700">
                             <FcGoogle className='w-6 h-6' />
-                            Continue With Google
-                        </button>
-                    </div>
+                            <span>Continue With Google</span>
+                        </div>
+                    </button>
 
 
 

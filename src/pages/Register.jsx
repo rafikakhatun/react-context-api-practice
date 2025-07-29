@@ -53,12 +53,12 @@ const Register = () => {
                             <label className='text-sm' htmlFor="showPassword">Show password</label>
                         </div>
 
-                         <div className='flex gap-1'>
+                        <div className='flex gap-1'>
                             <input type="checkbox" id="termsCondition" />
-                            <label className='text-sm' htmlFor="termsCondition">I agree to <Link className='text-blue-700 cursor-pointer'>terms & condition</Link></label>
+                            <label className='text-sm' htmlFor="termsCondition">I agree to <Link to="/termsCondition" className='text-blue-700 cursor-pointer'>terms & condition</Link></label>
                         </div>
 
-                        
+
                     </div>
 
 
@@ -72,12 +72,19 @@ const Register = () => {
                     </div>
 
                     {/* continue with Google*/}
-                    <div className='flex justify-center items-center'>
-                        <button className='flex gap-1 text-md text-gray-700 border border-gray-300 shadow rounded-md px-6 py-2 cursor-pointer'>
+                    <button className='w-full cursor-pointer'>
+                        <div className="flex items-center justify-center gap-2 px-6 py-2 border border-gray-300 shadow rounded-md text-md text-gray-700">
                             <FcGoogle className='w-6 h-6' />
-                            Continue With Google
-                        </button>
+                            <span>Continue With Google</span>
+                        </div>
+                    </button>
+
+                    {/*Already have an account */}
+                    <div className='flex gap-2 justify-center items-center'>
+                        <span className='text-gray-700'>Already have an account? Please</span>
+                        <Link className='text-blue-600' to="/login">Login</Link>
                     </div>
+
 
                 </form>
 
