@@ -1,9 +1,11 @@
 import React from 'react';
+import { FcGoogle } from 'react-icons/fc';
+
 
 const Login = () => {
     return (
         <>
-            <div className='w-full h-[500px] flex justify-center items-center'>
+            <div className='w-full h-screen flex justify-center items-center'>
                 <form className='p-8 shadow-lg rounded-md border border-gray-300 w-full max-w-md space-y-6'>
                     <h1 className='text-center text-2xl font-semibold text-gray-700 underline underline-offset-7 '>Login</h1>
                     {/* Email field */}
@@ -18,16 +20,22 @@ const Login = () => {
                         <input className='w-full px-4 py-3 rounded-md outline-none border border-gray-300 bg-gray-200' type="password" name="password" />
                     </div>
 
+                    <button className='w-full px-4 py-3 rounded-md bg-blue-600 text-white hover:bg-blue-700 cursor-pointer'>Login</button>
+
                     {/* Continue with google */}
                     <div className='flex justify-center items-center space-x-2'>
-                        <hr className='border w-1/4 border-gray-700' />
-                        <span>Or Continue With</span>
-                        <hr className='border w-1/4 border-gray-700' />
+                        <hr className='border w-1/5 border-gray-700' />
+                        <span className='text-gray-700'>Or Continue With</span>
+                        <hr className='border w-1/5 border-gray-700' />
                     </div>
 
-
-
-                    <button className='w-full px-4 py-3 rounded-md bg-blue-600 text-white hover:bg-blue-700 cursor-pointer'>Login</button>
+                    {/* continue with Google*/}
+                    <div className='flex justify-center items-center'>
+                        <button className='flex gap-1 text-md text-gray-700 border border-gray-300 shadow rounded-md px-6 py-2 cursor-pointer'>
+                            <FcGoogle className='w-6 h-6' />
+                            Continue With Google
+                        </button>
+                    </div>
 
 
 
