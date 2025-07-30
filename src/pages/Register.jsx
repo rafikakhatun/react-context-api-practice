@@ -34,8 +34,8 @@ const Register = () => {
     return (
         <>
             <div className='w-full h-screen flex justify-center items-center'>
-                <form onSubmit={handleSubmit} className='p-8 shadow-lg rounded-md border border-gray-300 w-full max-w-md space-y-4'>
-                    <h1 className='text-center text-2xl font-semibold text-gray-700 '>Registration Now</h1>
+                <form onSubmit={handleSubmit} className='p-8 shadow-lg rounded-md border border-gray-300 w-full max-w-md space-y-6'>
+                    <h1 className='text-center text-2xl font-semibold text-gray-700 underline underline-offset-7 '>Registration Now</h1>
                     <div className='space-y-2'>
                         <label className='block text-lg text-gray-800'>Email</label>
                         <input className=' w-full px-4 py-3 rounded-md outline-none border border-gray-300 bg-gray-200' type="email" placeholder='Enter a valid Email' name="email" />

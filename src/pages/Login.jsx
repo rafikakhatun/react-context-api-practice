@@ -31,7 +31,7 @@ const Login = () => {
 
                         <div className='flex gap-1'>
                             <input type="checkbox" id="termsCondition" />
-                            <label className='text-sm' htmlFor="termsCondition"><Link>Forgot password</Link></label>
+                            <label className='text-sm' htmlFor="termsCondition">Forgot password</label>
                         </div>
 
 
