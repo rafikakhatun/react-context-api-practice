@@ -1,15 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
 
-    const { register } = useContext(AuthContext); // context data 
+    const { register,details,setDetails } = useContext(AuthContext); // context data 
 
-    const [details, setDetails]= useState(null);
-
-
+   
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,6 +39,8 @@ const Register = () => {
     return (
         <>
             <div className='w-full h-screen flex justify-center items-center'>
+
+                <h1>{details?.email}</h1>
                
                 <form onSubmit={handleSubmit} className='p-8 shadow-lg rounded-md border border-gray-300 w-full max-w-md space-y-6'>
                     
