@@ -1,24 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
 
-    const { register } = useContext(AuthContext);
+    const { register } = useContext(AuthContext); // context data 
+
+    const [details, setDetails]= useState(null);
 
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        alert("hello")
 
         const email = e.target.email.value;
         const password = e.target.password.value;
 
         register(email, password)
-            .then(user => {
-                console.log(user)
-            }).catch(error => console.log(error));
+            .then(res => {
+                console.log(res)
+                setDetails(res.user) // user 
+            })
+            .catch(error => {
+                console.log(error) // user
+            });
 
     }
 
@@ -34,7 +41,9 @@ const Register = () => {
     return (
         <>
             <div className='w-full h-screen flex justify-center items-center'>
+               
                 <form onSubmit={handleSubmit} className='p-8 shadow-lg rounded-md border border-gray-300 w-full max-w-md space-y-6'>
+                    
                     <h1 className='text-center text-2xl font-semibold text-gray-700 underline underline-offset-7 '>Registration Now</h1>
                     <div className='space-y-2'>
                         <label className='block text-lg text-gray-800'>Email</label>
