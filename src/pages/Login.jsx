@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 
 const Login = () => {
+
+  
 
 
     const { login, details, setDetails, } = useContext(AuthContext);
@@ -21,6 +23,9 @@ const Login = () => {
         login(email, password)
             .then(res => {
                 console.log(res.user)
+                setDetails(res.user)
+                
+
             })
             .catch(error => {
                 console.log(error);
