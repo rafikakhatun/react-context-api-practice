@@ -6,14 +6,16 @@ import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
 
-  
+  // navigate 
+
+  const DrashboardNavagate = useNavigate();
 
 
     const { login, details, setDetails, } = useContext(AuthContext);
 
     const handleLogin = (e) => {
         e.preventDefault();
-        alert("hello")
+        alert("confirm login")
 
         // input field value get
 
@@ -24,6 +26,8 @@ const Login = () => {
             .then(res => {
                 console.log(res.user)
                 setDetails(res.user)
+
+                 DrashboardNavagate("/Drashboard")
                 
 
             })
