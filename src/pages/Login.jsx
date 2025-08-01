@@ -1,20 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 
 const Login = () => {
 
 
-    const handleLogin = (e) =>{
+    const { login, details, setDetails, } = useContext(AuthContext);
+
+    const handleLogin = (e) => {
         e.preventDefault();
         alert("hello")
 
         // input field value get
 
         const email = e.target.email.value;
-        const password =e.target.password.value; 
-        
+        const password = e.target.password.value;
+
+        login(email, password)
+            .then(res => {
+                console.log(res.user)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+            
+
+
 
     }
 
