@@ -9,7 +9,7 @@ const Register = () => {
 
    
 
-    const handleSubmit = (e) => {
+    const handleRegister = (e) => {
         e.preventDefault();
         alert("hello")
 
@@ -40,9 +40,8 @@ const Register = () => {
         <>
             <div className='w-full h-screen flex justify-center items-center'>
 
-                <h1>{details?.email}</h1>
                
-                <form onSubmit={handleSubmit} className='p-8 shadow-lg rounded-md border border-gray-300 w-full max-w-md space-y-6'>
+                <form onSubmit={handleRegister} className='p-8 shadow-lg rounded-md border border-gray-300 w-full max-w-md space-y-6'>
                     
                     <h1 className='text-center text-2xl font-semibold text-gray-700 underline underline-offset-7 '>Registration Now</h1>
                     <div className='space-y-2'>

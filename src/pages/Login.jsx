@@ -4,10 +4,38 @@ import { Link } from 'react-router-dom';
 
 
 const Login = () => {
+
+
+    const handleLogin = (e) =>{
+        e.preventDefault();
+        alert("hello")
+
+        // input field value get
+
+        const email = e.target.email.value;
+        const password =e.target.password.value; 
+        
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <>
             <div className='w-full h-screen flex justify-center items-center'>
-                <form className='p-8 shadow-lg rounded-md border border-gray-300 w-full max-w-md space-y-6'>
+                <form onSubmit={handleLogin} className='p-8 shadow-lg rounded-md border border-gray-300 w-full max-w-md space-y-6'>
                     <h1 className='text-center text-2xl font-semibold text-gray-700 underline underline-offset-7 '>Login</h1>
                     {/* Email field */}
                     <div className='space-y-2'>
