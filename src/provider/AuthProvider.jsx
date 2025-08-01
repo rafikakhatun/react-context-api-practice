@@ -1,4 +1,4 @@
-import {  createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { createContext, useState } from 'react';
 import auth from '../firebase/FirebaseInit';
 
@@ -18,17 +18,24 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
 
     // user details useState
- const [details, setDetails]= useState(null);
+    const [details, setDetails] = useState(null);
 
 
 
-    // Email and password authentication 
+    // Register with Email and password authentication 
 
-    const register = (email,password)=>{
+    const register = (email, password) => {
 
-        return createUserWithEmailAndPassword(auth,email,password);
+        return createUserWithEmailAndPassword(auth, email, password);
+    }
 
-    
+    // Login with Email and password authentication
+
+    const login = (email,password) => {
+
+     return   signInWithEmailAndPassword(auth,email,password);
+
+
 
 
     }
@@ -41,13 +48,14 @@ const AuthProvider = ({ children }) => {
         data: "Context API empowers our React app by enabling smooth and efficient state sharing across components without prop drilling.",
         register,
         details,
-         setDetails
+        setDetails,
+        login
 
     }
 
 
 
-    
+
 
 
 
