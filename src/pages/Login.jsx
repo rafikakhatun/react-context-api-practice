@@ -11,7 +11,7 @@ const Login = () => {
   const DrashboardNavagate = useNavigate();
 
 
-    const { login, details, setDetails, } = useContext(AuthContext);
+    const { login, details, setDetails,} = useContext(AuthContext);
 
     const handleLogin = (e) => {
         e.preventDefault();

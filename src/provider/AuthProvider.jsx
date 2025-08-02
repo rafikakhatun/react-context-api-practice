@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import React, { createContext, useState } from 'react';
 import auth from '../firebase/FirebaseInit';
 
@@ -15,30 +15,40 @@ export const AuthContext = createContext(null);
 
 
 
+
+
 const AuthProvider = ({ children }) => {
 
     // user details useState
     const [details, setDetails] = useState(null);
 
+    
 
 
     // Register with Email and password authentication 
 
     const register = (email, password) => {
-
+       
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     // Login with Email and password authentication
 
-    const login = (email,password) => {
-
-     return  signInWithEmailAndPassword(auth,email,password);
-
-
-
+    const login = (email, password) => {
+       
+        return signInWithEmailAndPassword(auth, email, password);
 
     }
+
+    // logout
+
+   const logOut = () => {
+        return signOut(auth);
+    }
+
+    
+
+   
 
 
     //  Sample user info for testing Context API data sharing
@@ -49,7 +59,9 @@ const AuthProvider = ({ children }) => {
         register,
         details,
         setDetails,
-        login
+        login,
+        logOut,
+        
 
     }
 

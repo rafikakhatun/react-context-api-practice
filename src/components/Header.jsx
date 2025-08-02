@@ -1,10 +1,25 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Header = () => {
 
-  const {details} =   useContext(AuthContext);
+    const { details,setDetails, logOut } = useContext(AuthContext);
+    const navigate = useNavigate()
+    console.log(details)
+
+
+    // logout 
+    const signOut = () => {
+        logOut()
+        .then(()=>{
+            setDetails(null)
+            navigate("/login")
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+    }
 
 
     return (
@@ -31,9 +46,21 @@ const Header = () => {
                     </Link>
 
                     {/*Login/ signUp*/}
-                    <Link to="/login">
-                        <button className='px-4 py-2 cursor-pointer bg-green-600 text-white rounded-xl'>Login{details?.email}</button>
-                    </Link>
+
+                    {details ?
+                    <Link>
+                        <button onClick={signOut} className='px-4 py-2 cursor-pointer bg-red-600 text-white rounded-xl'>Logout</button>
+                    </Link> :<Link to="/login">
+                        <button className='px-4 py-2 cursor-pointer bg-green-600 text-white rounded-xl'>Login</button>
+                    </Link> }
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </header>
