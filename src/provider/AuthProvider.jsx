@@ -22,33 +22,48 @@ const AuthProvider = ({ children }) => {
     // user details useState
     const [details, setDetails] = useState(null);
 
-    
+    // loader 
+    const [loader, setLoading] = useState(true)
 
 
     // Register with Email and password authentication 
 
     const register = (email, password) => {
-       
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     // Login with Email and password authentication
 
     const login = (email, password) => {
-       
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
 
     }
 
     // logout
 
-   const logOut = () => {
+    const logOut = () => {
         return signOut(auth);
     }
 
-    
+    // user obserber
 
-   
+    onAuthStateChanged(auth, (currentUser) => {
+        if (currentUser) {
+            setDetails(currentUser)
+            console.log(currentUser)
+            setLoading(false)
+        } else {
+            setLoading(false)
+        }
+
+
+    })
+
+
+
+
 
 
     //  Sample user info for testing Context API data sharing
@@ -61,7 +76,7 @@ const AuthProvider = ({ children }) => {
         setDetails,
         login,
         logOut,
-        
+
 
     }
 
